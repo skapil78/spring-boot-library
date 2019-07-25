@@ -3,12 +3,9 @@ pipeline {
   stages {
     stage('Build & Test') {
       steps {
-        sh 'mvn clean install'
         tool(name: 'Maven', type: 'maven-3.6.1')
+        sh 'mvn clean install'
       }
     }
-  }
-  tools {
-    maven 'maven-3.6.1'
   }
 }
