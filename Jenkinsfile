@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        tool(name: 'maven-3.6.1', type: 'mvn')
+        tool 'maven-3.6.1'
         sh 'mvn clean install'
       }
     }
