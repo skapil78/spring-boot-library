@@ -1,15 +1,13 @@
 pipeline {
   agent any
-  //tools{
-  //  'maven-3.6.1'
-  //}
+  tools{
+    maven 'maven-3.6.1'
+  }
   stages {
-   stage('Build & Test') {
-     steps {
-       withMaven(maven: 'maven-3.6.1'){
+    stage('Build & Test') {
+      steps {
          sh 'mvn clean install'
-       }
-     }
-   }
- }
+      }
+    }
+  }
 }
